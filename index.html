@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8" />
+        <meta name="viewport" content = 'width=device-width, initial-scale=1.0'/>
+
+
+        <!--CSS Link-->
+        <link rel="stylesheet" href="./style.css" />
+
+        <!--Bootstrap Link-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+        <title>JavaScript Quiz</title>
+    </head>
+    <body>
+        <!-- Container -->
+        <div class="container">
+          <!-- Header -->
+          <header class="col text-center p-4">
+            <h2>Coding Challenge Quiz</h2>
+          </header>
+    
+          <!-- Highscores-->
+          <section class="modal fade" id="staticBackdrop">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title" id="staticBackdropLabel">Highscores</h2>
+                  <button type="button" class="close">
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <ul class="list-group" id="highScoresList"></ul>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary">Close</button>
+                  <button type="button" class="btn btn-primary" id="clearHighscoresBtn">Clear Highscores</button>
+                </div>
+              </div>
+            </div>
+          </section>
+    
+          <!-- The Main Card -->
+          <section class="card">
+            <!-- Card Header -->
+            <section class="card-header pt-0 pb-0">
+              <div class="row row-cols-2">
+                <div class="col">
+                  <!--HighScores Anchor-->
+                  <a id="viewHighscores" href="#">View Highscores</a>
+                </div>
+                <div class="col text-right">
+                    <!--Timer-->
+                  <p class="mb-0" id="timeP">
+                    Available Time <strong><span id="timeSpan"></span></strong>
+                  </p>
+                </div>
+              </div>
+            </section>
+            <!-- /Card Header -->
+    
+            <!-- Card Body -->
+            <section class="card-body">
+              <section class="card bg-dark text-white" id="introduction">
+                <div class="text-center mt-3">
+                  <h3 class="card-title">Welcome!!</h3>
+                  <p class="card-text">
+                    Try to answer the following code-related questions within the
+                    time limit.
+                  </p>
+                </div>
+              </section>
+              <a href="#" class="btn btn-primary" id="startBtn">Start Quiz</a>
+    
+              <!-- Quiz -->
+              <section id="quiz">
+                <h5 id="question">Question 1 xxx xxxx xxx xxx xxx xxx</h5>
+                <div class="row row-cols-1 row-cols-md-2">
+                  <div class="col">
+                    <div class="list-group mb-4" id="answers"></div>
+                  </div>
+                </div>
+              </section>
+    
+              <!-- Printing Final Scores -->
+              <section id="allDone">
+                <div class="alert alert-success mt-0 mb-0">
+                  <h4 class="alert-heading">All Done!</h4>
+                  <hr />
+                  <h5 class="mb-0">Final score <span id="finalScore">xx</span></h5>
+                  <hr />
+                  <form class="form-inline">
+                    <input class="form-control mr-2" type="text" id="initials" placeholder="Please enter your initials"/>
+                    <button type="submit" class="btn btn-info" id="submit">Submit</button>
+                  </form>
+                </div>
+              </section>
+            </section>
+    
+            <!-- Card Footer -->
+            <div class="card-footer text-muted p-0">
+              <div class="progress" style="height: 100%;">
+                <div class="progress-bar bg-info progress-bar-striped" style="width: 0%; height: 100%;"></div>
+              </div>
+              <div class="alert alert-success mt-0 mb-0 pt-0 pb-0" id="assess-ft"><strong></strong></div>
+            </div>
+          </section>
+        </div>
+
+        <!-- jQuery Link -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <!-- Popper Link-->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <!-- Bootstrap Link-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <!--JavaScript Link-->
+        <script src="./script.js"></script>
+      </body>
+    </html>
+</html>
