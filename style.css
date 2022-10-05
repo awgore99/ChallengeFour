@@ -1,0 +1,15 @@
+/* ----- Card style ----- */
+
+.card-text {
+    font-weight: 900;
+  }
+  
+  .card-footer {
+    height: 1.5rem;
+  }
+  
+  #startBtn {
+    display: block;
+    padding-left: auto;
+    padding-right: auto;
+  }
