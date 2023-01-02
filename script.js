@@ -1,9 +1,12 @@
 let timerElement = document.getElementById("timer");
+let timerCount = 60;
 let startButton = document.getElementById("start");
 let questionNumber = 0;
 let questionEl = document.getElementById("questions");
 let answerEl = document.getElementById('answers');
 let answer = "";
+let scoreEl = document.getElementById("points")
+let score = 0;
 
 //Questions Object
 const questions = [
@@ -67,3 +70,16 @@ function getQuestions(){
 }
 
 startButton.addEventListener("click", start);
+//Checks the answer and then either updates the score, or timer
+answerEl.addEventListener("click", function(event){
+    let correctBool = document.getElementById("correctBool");
+    if(answer === event.target.textContent){
+        correctBool.innerHTML = "Correct! 1 point added to your score!";
+        score++;
+        scoreEl.textContent = "Score: " + score;
+    } else {
+        correctBool.innerHTML = "Incorrect! 3 seconds removed from your quiz timer!"
+        timerCount = timerCount - 3;
+    }
+    getQuestions();
+})
