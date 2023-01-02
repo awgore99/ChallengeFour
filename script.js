@@ -1,5 +1,9 @@
 let timerElement = document.getElementById("timer");
 let startButton = document.getElementById("start");
+let questionNumber = 0;
+let questionEl = document.getElementById("questions");
+let answerEl = document.getElementById('answers');
+let answer = "";
 
 //Questions Object
 const questions = [
@@ -45,5 +49,21 @@ function setTimer() {
         }
     }, 1000)
 };
+
+function getQuestions(){
+    //Save question answer globally
+    answer=questions[questionNumber].answer;
+
+    questionEl.textContent = questions[questionNumber].question;
+    answerEl.innerHTML="";
+    //Iterate through choices array in the given question
+    let choices = questions[questionNumber].choices;
+    for (var i=0; i<choices.length; i++) {
+        //Create clickability for each choice, as well as adding them to the page
+        var selection = document.createElement('button');
+        selection.textContent = choices[i];
+        answerButton = answerEl.appendChild(selection);
+    }
+}
 
 startButton.addEventListener("click", start);
